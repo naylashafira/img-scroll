@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cover dengan Password & Gambar</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-image: url(background\ cute.jpg);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+    }
+
+    .cover-box {
+        background-color: rgb(255, 212, 237);
+        padding: 30px;
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .cover-box img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+        margin-bottom: 20px;
+    }
+
+    input[type="password"] {
+        width: 90%;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        font-size: 16px;
+        background: #ffffff;
+        color: #b36dff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #f4e9ff;
+    }
+
+    passwordnya {
+        color:chocolate
+    }
+
+    #mainContent {
+        display: none;
+        color: black;
+        padding: 40px;
+    }
+</style>
+
+</head>
+<body>
+
+    <div class="cover-box" id="cover">
+
+        <!-- GAMBAR DI TENGAH ATAS -->
+        <img src="card.jpg" alt="Foto">
+
+        <h2>Masukkan Password</h2>
+        <input type="password" id="passwordInput" placeholder="Password...">
+        <button onclick="checkPassword()">masuk</button>
+               <p>@ ppsstt passwordnya iloveyou3000</p>
+        <p id="error" style="color: yellow; margin-top: 10px;"></p>
+    </div>
+
+    <div id="mainContent">
+        <h1>YEAYY</h1>
+        <p>kamu berhasil masuk!!</p>
+        <a href="index.html">
+        <button>pencet ini yuukkk</button>
+    </a>
+    </div>
+
+<script>
+    function checkPassword() {
+        const pass = document.getElementById("passwordInput").value;
+
+        // UBAH PASSWORD DI SINI
+        const correctPass = "iloveyou3000";
+
+        if (pass === correctPass) {
+            document.getElementById("cover").style.display = "none";
+            document.getElementById("mainContent").style.display = "block";
+        } else {
+            document.getElementById("error").textContent = "Password salah!";
+        }
+    }
+</script>
+
+</body>
+</html>
