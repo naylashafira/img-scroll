@@ -26,11 +26,44 @@
 
     h2 {
         color: palevioletred;
-        margin-top: 40px;
-        font-size: 32px;
+        margin-top: 30px;
+        font-size: 16;
         font-weight: bold;
         text-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
+
+button {
+  padding: 12px 22px;
+  margin: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Tombol Play */
+button:nth-of-type(1) {
+  background-color: #fa8bc8;
+  color: white;
+}
+
+button:nth-of-type(1):hover {
+  background-color: #fa8bc8;
+  transform: scale(1.05);
+}
+
+/* Tombol Stop */
+button:nth-of-type(2) {
+  background-color: #e07eb4;
+  color: white;
+}
+
+button:nth-of-type(2):hover {
+  background-color: #e07eb4;
+  transform: scale(1.05);
+}
+
 
     .container {
         margin-top: 40px;
@@ -47,13 +80,31 @@
         border-radius: 15px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
+
+    p {
+        color: black;
+        text-align: center;
+        font-size: medium;
+        font-style: italic;
+        margin-top: auto;
+        font-weight: bold;
+
+    }
 </style>
 
 </head>
 <body>
 
     <h1>our moments</h1>
-    <h2>thank you for always loving me 💗</h2>
+    <h2>we'll love each other, even when everyone and the world leave us.
+         me and you will always be together, no matter how heavy the problem will befall our relationship in the future. we will always be together and love each other.
+
+            thank you for always loving me 💗</h2>
+
+    <audio id="musik" src="Taylor_Swift_-_Daylight.mp3"></audio>
+
+<button onclick="playMusic()">Play Musik 🎵</button>
+<button onclick="stopMusic()">Stop ✖️</button>
 
     <div class="container">
         <img src="bucin1.jpg" alt="Foto 1">
@@ -61,6 +112,19 @@
         <img src="bucin3.jpg" alt="Foto 3">
         <img src="bucin4.jpg" alt="Foto 4">
     </div>
+
+
+    <script>
+function playMusic() {
+  document.getElementById("musik").play();
+}
+
+function stopMusic() {
+  const audio = document.getElementById("musik");
+  audio.pause();
+  audio.currentTime = 0;
+}
+</script>
 
 </body>
 </html>
